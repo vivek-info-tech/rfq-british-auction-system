@@ -1,22 +1,5 @@
 # rfq-british-auction-system
  
-
-A full-stack web application that implements a **British Auction-style bidding system** for Request for Quotation (RFQ) management. Built as part of the GoComet assignment.
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Frontend | React 18, Vite, Tailwind CSS, React Router v6, Axios |
-| Backend | Java 17, Spring Boot 3, Spring Data JPA, Lombok |
-| Database | MySQL 8 |
-| ORM | Hibernate |
-| Build tool | Maven |
-
----
-
 ## Project Structure
 
 ```
