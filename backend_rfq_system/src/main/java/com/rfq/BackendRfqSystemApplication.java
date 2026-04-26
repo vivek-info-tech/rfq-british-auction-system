@@ -1,4 +1,4 @@
-package com.example.backend_rfq_system;
+package com.rfq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
