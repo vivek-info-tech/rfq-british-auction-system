@@ -1,16 +1,16 @@
-# --- Stage 1: Build the JAR ---
-FROM maven:3.9.6-eclipse-temurin-17-alpine AS build
+# --- Stage 1: Build the JAR using Java 25 ---
+FROM maven:3.9.9-eclipse-temurin-25-alpine AS build
 WORKDIR /app
 
 # Copy the project files
 COPY pom.xml .
 COPY src ./src
 
-# Build the application (skipping tests speeds up deployment)
+# Build the application
 RUN mvn clean package -DskipTests
 
-# --- Stage 2: Run the Application ---
-FROM eclipse-temurin:17-jre-alpine
+# --- Stage 2: Run the Application using Java 25 ---
+FROM eclipse-temurin:25-jre-alpine
 WORKDIR /app
 
 # Copy only the built JAR from the first stage
