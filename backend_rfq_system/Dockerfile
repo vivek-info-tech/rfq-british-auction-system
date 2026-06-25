@@ -1,6 +1,11 @@
 # --- Stage 1: Build the JAR using Java 25 ---
-FROM maven:3.9.9-eclipse-temurin-25-alpine AS build
+FROM eclipse-temurin:25-jdk-alpine AS build
 WORKDIR /app
+
+# Install Maven manually to guarantee Java 25 compatibility
+RUN apk add --no-cache curl tar && \
+    curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz | tar xzf - -C /opt && \
+    ln -s /opt/apache-maven-3.9.9/bin/mvn /usr/bin/mvn
 
 # Copy the project files
 COPY pom.xml .
